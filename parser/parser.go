@@ -14,6 +14,7 @@ import (
 const BASE_URL = "https://ktu.edu.in/eu/core/announcements.htm"
 const UPDATE_INTERVAL = 10                                              // seconds
 var ANNOUNCE []notifier.Announcement = make([]notifier.Announcement, 0) // global variable
+var initTime = time.Now()
 
 func fetchSoup() (*goquery.Document, error) {
 	req, _ := http.NewRequest("GET", BASE_URL, nil)
@@ -89,5 +90,5 @@ func checkDuplicate(ann notifier.Announcement) bool {
 
 func checkIfOld(ann notifier.Announcement) bool {
 	t, _ := time.Parse("Mon Jan 2 15:04:05 MST 2006", ann.Date)
-	return t.Before(time.Now())
+	return t.After(initTime)
 }
