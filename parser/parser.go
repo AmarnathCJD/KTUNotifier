@@ -88,12 +88,6 @@ func checkDuplicate(ann notifier.Announcement) bool {
 }
 
 func checkIfOld(ann notifier.Announcement) bool {
-	// Sat Sep 30 00:00:00 IST 2023
-
-	t := ann.Date
-	tx := time.Now().Format("Mon Jan 2 15:04:05 MST 2006")
-	t1, _ := time.Parse("Mon Jan 2 15:04:05 MST 2006", t)
-	t2, _ := time.Parse("Mon Jan 2 15:04:05 MST 2006", tx)
-
-	return t1.Before(t2)
+	t, _ := time.Parse("Mon Jan 2 15:04:05 MST 2006", ann.Date)
+	return t.Before(time.Now())
 }
