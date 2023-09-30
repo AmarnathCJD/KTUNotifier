@@ -8,6 +8,13 @@ KTUNotifier is a real-time notification feed that provides updates from ktu.edu.
 - **Notification Channels**: KTUNotifier integrates with popular messaging platforms like Telegram, allowing users to receive notifications directly on their devices.
 - **Automatic Updates**: The application automatically fetches updates at regular intervals, ensuring that users are always up to date with the latest information from ktu.edu.live.
 
+## Environment Variables
+
+KTUNotifier requires the following environment variables to be set:
+
+- `BOT_TOKEN`: The Telegram bot token used to send notifications to users.
+- `CHAT_ID`: The Telegram chat ID used to send notifications to users.
+
 ## Installation
 
 To use KTUNotifier, follow these steps:
@@ -39,6 +46,6 @@ Contributions to KTUNotifier are welcome! If you would like to contribute, pleas
 
 ## License
 
-KTUNotifier is released under the [MIT License](LICENSE). Feel free to modify and distribute the application according to the terms of the license.
+KTUNotifier is released under the [GNU General Public License v3.0](LICENSE). Feel free to modify and distribute the application according to the terms of the license.
 
 Please note that the usage of KTUNotifier is subject to the terms and conditions set by ktu.edu.live. Ensure compliance with their terms of service when using KTUNotifier.
